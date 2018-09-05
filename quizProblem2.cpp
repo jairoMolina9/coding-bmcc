@@ -1,14 +1,61 @@
-// inverse array
+/*
+ * Jairo Molina
+ * 23499086
+ * Fall 2018, CSC 211
+ * Tuesday, Sept 4 2018
+ * 11:23 PM
+ *
+ * Dr. Azhar
+ */
+
 #include <iostream>
+int getSize();
+int* getArray(const int);
+
+void printArray(int*, const int);
 void reverseArray(int*, const int);
+
 using namespace std;
 
 int main ()
 {
-    const int size = 4;
-    int arr[size] = {4,2,6,7};
+    const int size = getSize();
+    int* array = getArray(size);
 
-    reverseArray(arr, size);
+    printArray(array, size);
+    reverseArray(array, size);
+
+    cout << "\nGood bye!" << endl;
+}
+
+int getSize()
+{
+  int length;
+  cout << "Enter legth of number serie: " << endl;
+  cin >> length;
+  cout << "\n";
+  const int size = length;
+  return size;
+}
+
+int* getArray(const int size)
+{
+  int* array = new int [size];
+  for(int i = 0 ; i < size ; i++)
+  {
+    cout << "Enter [" << i << "] :" << endl;
+    cin >> array[i];
+  }
+  return array;
+}
+void printArray(int *array, const int size)
+{
+  cout << "\n**Array List**\n";
+  for(int i = 0 ; i < size ; i++)
+  {
+      cout << "Index [" << i << "] = " << array[i] << endl;
+  }
+  cout << "\n";
 }
 void reverseArray(int *array, const int size)
 {
@@ -28,7 +75,7 @@ void reverseArray(int *array, const int size)
             array[size-i] = temp;
         }
     }
-
+    cout << "\n**Reverse Array List**\n";
     for(int i = 0; i < size; i++)
     {
         cout << "Index [" << i << "] = " << array[i] << endl;
