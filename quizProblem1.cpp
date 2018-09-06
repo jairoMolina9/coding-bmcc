@@ -12,9 +12,6 @@
 
 using namespace std;
 
-string getName();
-int getCredit();
-
 class StudentInfo {
 
 private:
@@ -54,27 +51,17 @@ bool StudentInfo::graduationReady(int cred)
 
 int main ()
 {
-
+    string name;
+    int credits;
+    
     StudentInfo stud;
-
+    
+    cout << "Enter name: " << endl;
+    cin >> name;
+    
+    cout << "Enter credit: " << endl;
+    cin >> credit;
+    
     stud.addCredits(getCredit(), getName()); //values from functions passed as arguments
     stud.result(); // display final result
-}
-
-string getName()
-{
-  string name;
-  cout << "Enter name: " << endl;
-  cin >> name;
-
-  return name;
-}
-
-int getCredit()
-{
-  int credit = 0;
-  cout << "Enter credit: " << endl;
-  cin >> credit;
-
-  return credit;
 }
